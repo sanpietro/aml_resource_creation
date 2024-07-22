@@ -34,7 +34,14 @@ def create_aml_workspace():
     suffix = create_random_suffix()
     resource_group = f"aml_rg_{suffix}"
     workspace_name = f"aml_ws_{suffix}"
-    location = "westus2"
+    location = region
+
+    # Input region
+    region = input("Choose from the following list of regions: 'eastus', 'westus', 'centralus', 'northeurope', 'westeurope': ")
+
+    # Print the chosen location
+    print(f"You have chosen the region: {location}")
+
 
     try:
         # Create the resource group and workspace
